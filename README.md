@@ -116,8 +116,10 @@ recall rate = TP / (TP + FN)
 
 ##### 预训练词向量
 
-* word2vec词向量：可以从官网https://code.google.com/archive/p/word2vec/下载工具包，或者用gensim调用https://radimrehurek.com/gensim/models/word2vec.html
-* glove词向量：从官网下载工具包https://nlp.stanford.edu/projects/glove/
+* word2vec词向量：
+  * 从官网下载工具包： https://code.google.com/archive/p/word2vec/
+  * 或者用gensim调用：https://radimrehurek.com/gensim/models/word2vec.html
+* glove词向量：从官网下载工具包：https://nlp.stanford.edu/projects/glove/
 
 ##### 提取各种feature的py文件
 * cut_utils.py : 对数据进行分词处理
@@ -130,9 +132,19 @@ recall rate = TP / (TP + FN)
 * train_xgb.py : 训练xgb模型
 * main_xgb_stack.py : 得到xgb模型的预测结果
 
-
-
-
+| 文件               | 特征               | 特征描述                        |
+| ------------------ | ------------------ | ------------------------------- |
+| string_diff.py     | total_unique_words | 分词后，词序列长度差            |
+|                    | wc_diff            | 字符串长度差                    |
+|                    | wc_ratio           | 字符串长度比                    |
+|                    | wc_diff_unique     | 词序列长度差                    |
+|                    | wc_ratio_unique    | 词序列长度比                    |
+|                    | char_diff          | 字序列长度差                    |
+|                    | char_ratio         | 字序列长度比                    |
+| string_distance.py | levenshtein        | absolute Levenshtein distance   |
+|                    | nlevenshtein       | normalized Levenshtein distance |
+|                    | jaccard            | Jaccard distance                |
+|                    | jaro_winkler       | Jaro string similarity          |
 
 
 
